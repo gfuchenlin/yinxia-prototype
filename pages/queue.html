@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>音匣 · 播放队列</title>
+<link rel="stylesheet" href="../shared.css"/>
+</head>
+<body>
+<div class="docbar"><a href="../index.html">页面目录</a><b>播放队列</b></div>
+<div class="stage">
+<div class="phone ">
+<div class="status"><span>9:41</span><span class="battery" aria-hidden="true"></span></div>
+<div class="screen">
+  <div class="handle"></div>
+  <div class="navrow">
+    <div><div class="page-title" style="font-size:28px;margin:0">播放队列</div><p class="hint" id="queue-count">共 8 首 · 列表循环</p></div>
+    <div class="spacer"></div>
+    <button class="danger" data-confirm="确定清空播放队列？" data-toast="队列已清空" data-clear-queue data-back="player-playing.html">清空</button>
+  </div>
+  <p class="section-label">正在播放</p>
+  <div class="queue-now"><span class="sq"></span><span class="grow"><b>发如雪</b><span class="subline">flac · 10.4 MB · 周杰伦</span></span></div>
+  <p class="section-label">接下来</p>
+  <div id="queue-next">
+  <div class="qrow">
+  <span class="grip">≡</span>
+  <span class="grow"><b>黑色毛衣</b><span class="subline"><span class="fmt">mp3</span>4.6 MB · 周杰伦</span></span>
+  <button class="icon-btn" data-toast="已从队列移除" aria-label="移除">×</button>
+</div><div class="qrow">
+  <span class="grip">≡</span>
+  <span class="grow"><b>枫</b><span class="subline"><span class="fmt">flac</span>11.2 MB · 周杰伦</span></span>
+  <button class="icon-btn" data-toast="已从队列移除" aria-label="移除">×</button>
+</div><div class="qrow">
+  <span class="grip">≡</span>
+  <span class="grow"><b>浪漫手机</b><span class="subline"><span class="fmt">aac</span>5.8 MB · 周杰伦</span></span>
+  <button class="icon-btn" data-toast="已从队列移除" aria-label="移除">×</button>
+</div><div class="qrow">
+  <span class="grip">≡</span>
+  <span class="grow"><b>逆鳞</b><span class="subline"><span class="fmt">flac</span>12.0 MB · 周杰伦</span></span>
+  <button class="icon-btn" data-toast="已从队列移除" aria-label="移除">×</button>
+</div><div class="qrow">
+  <span class="grip">≡</span>
+  <span class="grow"><b>麦芽糖</b><span class="subline"><span class="fmt">flac</span>8.1 MB · 周杰伦</span></span>
+  <button class="icon-btn" data-toast="已从队列移除" aria-label="移除">×</button>
+</div><div class="qrow">
+  <span class="grip">≡</span>
+  <span class="grow"><b>珊瑚海</b><span class="subline"><span class="fmt">flac</span>9.3 MB · 周杰伦</span></span>
+  <button class="icon-btn" data-toast="已从队列移除" aria-label="移除">×</button>
+</div><div class="qrow">
+  <span class="grip">≡</span>
+  <span class="grow"><b>一路向北</b><span class="subline"><span class="fmt">flac</span>8.7 MB · 周杰伦</span></span>
+  <button class="icon-btn" data-toast="已从队列移除" aria-label="移除">×</button>
+</div>
+  </div>
+  <button class="btn ghost" data-back="player-playing.html">关闭</button>
+</div>
+<div class="home"><span></span></div>
+</div>
+</div>
+<script src="../shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>音匣 · 歌曲操作</title>
+<link rel="stylesheet" href="../shared.css"/>
+</head>
+<body>
+<div class="docbar"><a href="../index.html">页面目录</a><b>歌曲操作</b></div>
+<div class="stage">
+<div class="phone ">
+<div class="sheet-page">
+  <div class="sheet-bg">
+    <div class="status"><span>9:41</span><span class="battery" aria-hidden="true"></span></div>
+    <div class="navrow"><span class="icon-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18 9 12l6-6"/></svg></span><div class="center-title">专辑</div></div>
+    <div class="pl-head"><div class="cover-lg" style="background:#31456e"></div><div><h2>十一月的萧邦</h2><p>2005 · 周杰伦</p></div></div>
+  </div>
+  <button class="sheet-bg" data-back="album.html" aria-label="关闭" style="flex:1;border:0"></button>
+  <div class="sheet">
+    <div class="handle"></div>
+    <div class="sheet-song">
+      <span class="sq"></span>
+      <span class="grow"><h2>发如雪</h2><p>周杰伦 · 十一月的萧邦</p></span>
+      <button class="heart on" data-like aria-label="喜欢"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 20s-7-4.4-7-9a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 4.6-7 9-7 9z"/></svg></button>
+    </div>
+    <div class="stars" aria-label="评分">
+      <button data-star="1" class="on">★</button>
+      <button data-star="2" class="on">★</button>
+      <button data-star="3" class="on">★</button>
+      <button data-star="4" class="on">★</button>
+      <button data-star="5">★</button>
+    </div>
+    <button class="menu-item" data-toast="已设为下一首播放" data-back="album.html"><b>下一首播放</b><span>插到当前下一首</span></button>
+    <button class="menu-item" data-toast="已追加到队列" data-back="album.html"><b>追加到队列</b><span>加到队列末尾</span></button>
+    <a class="menu-item" href="artist-albums.html"><b>查看艺人</b><span>周杰伦</span></a>
+    <a class="menu-item" href="album.html"><b>查看专辑</b><span>十一月的萧邦</span></a>
+    <button class="cancel" data-back="album.html">取消</button>
+  </div>
+</div>
+<div class="home"><span></span></div>
+</div>
+</div>
+<script src="../shared.js"></script>
+</body>
+</html>

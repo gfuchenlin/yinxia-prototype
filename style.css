@@ -1,0 +1,100 @@
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{
+  font-family:-apple-system,"PingFang SC","Helvetica Neue",sans-serif;
+  background:#0b0d14;
+  color:#e8eaf2;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:20px 16px 32px;
+  gap:10px;
+}
+h1{font-size:17px;font-weight:560;letter-spacing:.02em;color:#d5d9e8}
+.hint{font-size:12px;color:#8b91a5;text-align:center;max-width:400px;line-height:1.55}
+.toolbar{
+  display:flex;align-items:center;gap:10px;margin-top:2px;
+  font-size:12px;color:#9aa1b5;
+}
+.toolbar label{cursor:pointer;user-select:none;display:flex;align-items:center;gap:6px}
+.toolbar input{accent-color:#7ecf9a}
+
+.phone{
+  width:390px;height:844px;
+  border-radius:40px;
+  overflow:hidden;
+  position:relative;
+  background:#000;
+  box-shadow:0 28px 70px rgba(0,0,0,.55), inset 0 0 0 2px #3a4058;
+  flex-shrink:0;
+}
+
+.stage{position:absolute;inset:0}
+
+.screen{
+  position:absolute;inset:0;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .2s ease;
+  z-index:1;
+  background:#000;
+}
+.screen.on{
+  opacity:1;
+  pointer-events:auto;
+  z-index:2;
+}
+.screen img{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center top;
+  pointer-events:none;
+  user-select:none;
+  display:block;
+}
+
+.hotspot{
+  position:absolute;
+  cursor:pointer;
+  z-index:3;
+  border-radius:6px;
+  border:0;
+  padding:0;
+  background:transparent;
+  appearance:none;
+  -webkit-appearance:none;
+}
+body.show-hotspots .hotspot{
+  outline:1.5px solid rgba(60,255,120,.85);
+  background:rgba(60,255,120,.12);
+}
+
+.toast{
+  position:absolute;
+  left:50%;
+  bottom:120px;
+  transform:translateX(-50%) translateY(8px);
+  background:rgba(28,32,48,.94);
+  color:#f2f3f7;
+  padding:10px 16px;
+  border-radius:10px;
+  font-size:13px;
+  white-space:nowrap;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .18s ease, transform .18s ease;
+  z-index:50;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
+  border:1px solid rgba(255,255,255,.08);
+}
+.toast.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+
+@media (max-width:420px){
+  body{padding:12px 8px 24px}
+  .phone{width:min(390px,100vw - 16px);height:calc(min(390px,100vw - 16px) * 844 / 390);border-radius:28px}
+}

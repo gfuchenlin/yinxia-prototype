@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>音匣 · HTML 原型</title>
+<link rel="stylesheet" href="shared.css"/>
+</head>
+<body>
+<main class="catalog">
+  <h1>音匣 · HTML 原型</h1>
+  <p class="lead">每个屏幕是独立页面，改文案直接改对应 HTML。从启动页可以沿主路径点下去。</p>
+  <a class="start" href="pages/splash.html">从启动页开始</a>
+
+  <h2>启动与连接</h2>
+  <div class="catalog-grid">
+    <a href="pages/splash.html">启动页</a>
+    <a href="pages/connect.html">选择服务</a>
+    <a href="pages/connect-form.html">连接配置</a>
+    <a href="pages/connect-fail.html">连接失败</a>
+  </div>
+
+  <h2>主壳</h2>
+  <div class="catalog-grid">
+    <a href="pages/library.html">曲库</a>
+    <a href="pages/server.html">Navidrome</a>
+    <a href="pages/search.html">搜索</a>
+    <a href="pages/daily.html">每日推荐</a>
+    <a href="pages/settings.html">设置</a>
+    <a href="pages/about.html">关于</a>
+    <a href="pages/empty-library.html"></a> · <a href="pages/empty-search.html">搜索空态</a> · <a href="pages/weak-network.html">弱网">空曲库</a>
+  </div>
+
+  <h2>曲库二级</h2>
+  <div class="catalog-grid">
+    <a href="pages/playlist-all-songs.html">全部歌曲</a>
+    <a href="pages/playlist-liked.html">我喜欢的</a>
+    <a href="pages/playlist-local.html">本地音乐</a>
+    <a href="pages/genre-list.html">流派</a>
+    <a href="pages/playlist-genre-pop.html">流派 · Pop</a>
+    <a href="pages/playlist-genre-rnb.html">流派 · R&amp;B</a>
+    <a href="pages/singer-list.html">歌手</a>
+    <a href="pages/playlist.html">周末精选</a>
+  </div>
+
+  <h2>详情</h2>
+  <div class="catalog-grid">
+    <a href="pages/album.html">专辑</a>
+    <a href="pages/artist-albums.html">艺人 · 专辑</a>
+    <a href="pages/artist-songs.html">艺人 · 歌曲</a>
+    <a href="pages/artist-similar.html">艺人 · 相似</a>
+    <a href="pages/song-sheet.html">歌曲操作</a>
+  </div>
+
+  <h2>播放器</h2>
+  <div class="catalog-grid">
+    <a href="pages/player-playing.html">播放中</a>
+    <a href="pages/player-paused.html">已暂停</a>
+    <a href="pages/player-recommend.html">推荐</a>
+    <a href="pages/player-lyrics.html">歌词</a>
+    <a href="pages/queue.html">播放队列</a>
+  </div>
+</main>
+
+<section style="max-width:720px;margin:24px auto;padding:0 16px;color:#ccc;font:14px/1.6 sans-serif">
+  <h2 style="color:#fff">设计盖章 / 异常页</h2>
+  <p><a href="DESIGN-STAMPS.md">DESIGN-STAMPS.md</a></p>
+  <p>
+    <a href="pages/empty-search.html">搜索空态</a> ·
+    <a href="pages/weak-network.html">弱网示意</a> ·
+    <a href="pages/empty-library.html">曲库空态</a>
+  </p>
+</section>
+</body>
+</html>

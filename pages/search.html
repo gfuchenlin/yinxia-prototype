@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>音匣 · 搜索</title>
+<link rel="stylesheet" href="../shared.css"/>
+</head>
+<body>
+<div class="docbar"><a href="../index.html">页面目录</a><b>搜索</b></div>
+<div class="stage">
+<div class="phone ">
+<div class="status"><span>9:41</span><span class="battery" aria-hidden="true"></span></div>
+<div class="screen pad-tabs">
+
+<h1 class="page-title">搜索</h1>
+<div class="search-row">
+  <input class="searchbar" id="searchInput" placeholder="歌曲、专辑、艺人" aria-label="搜索" autocomplete="off" enterkeyhint="search"/>
+  <button class="search-cancel" id="searchCancel" type="button" hidden>取消</button>
+</div>
+<div id="history" hidden>
+  <div class="section-head">
+    <p class="section-label" style="margin-top:8px">搜索记录</p>
+    <button class="more-link" id="clearHistory" type="button">清空</button>
+  </div>
+  <div id="historyList"></div>
+</div>
+<div id="browse">
+<div class="section-head">
+  <p class="section-label" style="margin-top:0">每日推荐</p>
+  <a class="more-link" href="daily.html">查看更多</a>
+</div>
+<div id="results">
+  <div class="track" data-key="怎么说我不爱你 萧敬腾"><span class="sq"></span><a class="main" href="player-playing.html"><span class="title">怎么说我不爱你</span><span class="subline">萧敬腾</span></a><a class="play-mini" href="player-playing.html" aria-label="播放怎么说我不爱你"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l12-7z"/></svg></a></div>
+  <div class="track" data-key="小半 陈粒"><span class="sq"></span><a class="main" href="player-playing.html"><span class="title">小半</span><span class="subline">陈粒</span></a><a class="play-mini" href="player-playing.html" aria-label="播放小半"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l12-7z"/></svg></a></div>
+  <div class="track" data-key="晴天 周杰伦"><span class="sq"></span><a class="main" href="player-playing.html"><span class="title">晴天</span><span class="subline">周杰伦</span></a><a class="play-mini" href="player-playing.html" aria-label="播放晴天"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l12-7z"/></svg></a></div>
+</div>
+<p class="section-label">最新专辑</p>
+<div class="recent">
+  <a href="album.html" data-key="范特西 周杰伦" style="background:#4a3d78;display:flex;align-items:flex-end;padding:8px;font-size:13px">范特西</a>
+  <a href="album.html" data-key="如也 陈粒" style="background:#2f4a48;display:flex;align-items:flex-end;padding:8px;font-size:13px">如也</a>
+  <a href="album.html" data-key="海阔天空 Beyond" style="background:#5a4032;display:flex;align-items:flex-end;padding:8px;font-size:13px">海阔天空</a>
+</div>
+<p class="section-label">最近播放</p>
+<div>
+  <div class="track" data-key="午夜回声 Luna Waves"><span class="sq"></span><a class="main" href="player-playing.html"><span class="title">午夜回声</span><span class="subline">Luna Waves</span></a><a class="play-mini" href="player-playing.html" aria-label="播放午夜回声"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l12-7z"/></svg></a></div>
+  <div class="track" data-key="发如雪 周杰伦"><span class="sq" style="background:#31456e"></span><a class="main" href="player-playing.html"><span class="title">发如雪</span><span class="subline">周杰伦</span></a><a class="play-mini" href="player-playing.html" aria-label="播放发如雪"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l12-7z"/></svg></a></div>
+  <div class="track" data-key="体面 于文文"><span class="sq" style="background:#5a4032"></span><a class="main" href="player-playing.html"><span class="title">体面</span><span class="subline">于文文</span></a><a class="play-mini" href="player-playing.html" aria-label="播放体面"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l12-7z"/></svg></a></div>
+</div>
+
+</div>
+</div>
+<a class="mini" href="player-playing.html">
+  <span class="cover"></span>
+  <span class="grow"><b>午夜回声</b><span>Luna Waves</span></span>
+  <span class="ctrls"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M16 5h2v14h-2zM4 6l11 6L4 18z"/></svg></span>
+</a>
+<nav class="tabs"><a href="search.html" class="on">搜索</a><a href="library.html">曲库</a><a href="settings.html">设置</a></nav>
+<div class="home"><span></span></div>
+</div>
+</div>
+<script src="../shared.js"></script>
+<script>
+(function () {
+  var KEY = "yinxia-search-history";
+  var input = document.getElementById("searchInput");
+  var cancel = document.getElementById("searchCancel");
+  var history = document.getElementById("history");
+  var list = document.getElementById("historyList");
+  var clearBtn = document.getElementById("clearHistory");
+  var browse = document.getElementById("browse");
+  if (!input || !history || !browse) return;
+
+  function read() {
+    try { return JSON.parse(sessionStorage.getItem(KEY) || "[]"); }
+    catch (err) { return []; }
+  }
+  function write(items) {
+    try { sessionStorage.setItem(KEY, JSON.stringify(items)); } catch (err) {}
+  }
+  if (!read().length) write(["周杰伦", "小半", "陈粒"]);
+
+  function renderHistory() {
+    var items = read();
+    list.innerHTML = "";
+    clearBtn.hidden = items.length === 0;
+    if (!items.length) {
+      var empty = document.createElement("p");
+      empty.className = "history-empty";
+      empty.textContent = "暂无搜索记录";
+      list.appendChild(empty);
+      return;
+    }
+    items.forEach(function (text) {
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "history-item";
+      btn.textContent = text;
+      btn.addEventListener("click", function () {
+        input.value = text;
+        applyQuery(text);
+        input.focus();
+      });
+      list.appendChild(btn);
+    });
+  }
+
+  function remember(text) {
+    var q = text.trim();
+    if (!q) return;
+    var items = read().filter(function (item) { return item !== q; });
+    items.unshift(q);
+    write(items.slice(0, 12));
+    renderHistory();
+  }
+
+  function applyQuery(raw) {
+    var q = raw.trim().toLowerCase();
+    var active = document.activeElement === input;
+    browse.querySelectorAll("[data-key]").forEach(function (row) {
+      var key = (row.getAttribute("data-key") || "").toLowerCase();
+      row.hidden = Boolean(q) && key.indexOf(q) === -1;
+    });
+    if (q) {
+      history.hidden = true;
+      browse.hidden = false;
+      cancel.hidden = false;
+      return;
+    }
+    history.hidden = !active;
+    browse.hidden = active;
+    cancel.hidden = !active;
+  }
+
+  input.addEventListener("focus", function () { applyQuery(input.value); });
+  input.addEventListener("input", function () { applyQuery(input.value); });
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      remember(input.value);
+      applyQuery(input.value);
+    }
+  });
+  cancel.addEventListener("click", function () {
+    input.value = "";
+    input.blur();
+    history.hidden = true;
+    browse.hidden = false;
+    cancel.hidden = true;
+    browse.querySelectorAll("[data-key]").forEach(function (row) { row.hidden = false; });
+  });
+  clearBtn.addEventListener("click", function () {
+    write([]);
+    renderHistory();
+  });
+
+  renderHistory();
+})();
+</script>
+</body>
+</html>
